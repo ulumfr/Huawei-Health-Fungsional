@@ -1,50 +1,49 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def mulai_route():
-    print("Mulai Route Exercise")
-    mulai_perekaman()
+def start_route():
+    print("\n=== Routes Exercise ===")
+    print("Start Exercise Route")
+    start_recording()
 
-def mulai_perekaman():
-    print("Mulai Perekaman Latihan")
-    rekam_gps_data()
+def start_recording():
+    print("Start Exercise Recording")
+    record_gps()
 
-def rekam_gps_data():
-    print("Rekam GPS Data")
-    cek_koneksi_gps()
+def record_gps():
+    print("Record GPS Data")
+    check_gps()
 
-def cek_koneksi_gps():
-    print("Memeriksa Koneksi GPS")
-    koneksi_gps = True
-    if koneksi_gps:
-        mulai_pemetaan_latihan()
+def check_gps():
+    print("Checking GPS Connection")
+    connection_gps = True
+    if connection_gps:
+        start_mapping()
     else:
-        print("Tidak Ada Koneksi GPS")
-        tampilkan_pesan("Tidak Ada Koneksi")
+        print("No GPS Connection")
+        display_message("No Connection")
 
-def mulai_pemetaan_latihan():
-    print("Mulai Pemetaan Latihan")
-    tampilkan_peta()
+def start_mapping():
+    print("Start Exercise Mapping")
+    display_map()
 
-def tampilkan_pesan(pesan):
-    print(f"Tampilkan Pesan: {pesan}")
+def display_message(message):
+    print(f"Display Message: {message}")
 
-def tampilkan_peta():
-    print("Tampilkan Peta dengan GPS Data")
+def display_map():
+    print("Display Map with GPS Data")
 
     theta = np.linspace(0, 2*np.pi, 100)
     x = 16 * np.sin(theta)**3
     y = 13 * np.cos(theta) - 5 * np.cos(2*theta) - 2 * np.cos(3*theta) - np.cos(4*theta)
 
     plt.plot(x, y, marker='o')
-    plt.title("Pemetaan Latihan dengan GPS Data")
+    plt.title("Exercise Mapping with GPS Data")
     plt.xlabel("Longitude")
     plt.ylabel("Latitude")
     plt.show()
 
-    selesai_rekaman()
+    recording_complete()
 
-def selesai_rekaman():
-    print("Selesai Rekaman Latihan")
-
-mulai_route()
+def recording_complete():
+    print("Exercise Recording Completed")

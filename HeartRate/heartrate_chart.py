@@ -39,10 +39,3 @@ def create_and_plot_heart_rate_chart(start_time, interval, heart_rate_values):
     timestamps = generate_timestamps(start_time, interval, len(heart_rate_values))
     heart_rate_data = create_heart_rate_data(timestamps, heart_rate_values)
     plot_heart_rate_chart(*extract_heart_rate_info(heart_rate_data))
-
-start_time = datetime.strptime('2023-01-01 08:00:00', '%Y-%m-%d %H:%M:%S')
-interval = 5
-additional_heart_rate_data = [65, 66, 70, 80, 88, 90, 93, 100, 102, 109, 115, 130, 140, 139, 145, 146, 148, 152, 160, 166, 171, 169, 170,
-                               169, 164, 160, 158, 155, 150, 149, 145, 143, 135, 129, 110, 105, 101, 97, 93, 90, 88, 75]
-
-create_and_plot_heart_rate_chart(start_time, interval, additional_heart_rate_data)

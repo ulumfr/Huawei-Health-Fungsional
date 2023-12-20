@@ -26,25 +26,21 @@ def calculate_minutes_between_datetimes(start_datetime, end_datetime):
     return ((end_datetime - start_datetime).total_seconds()) / 60
 
 def main():
-    heart_rate_data = [65, 66, 70, 80, 88, 90, 93, 100, 102, 109, 115, 130, 140, 139, 145, 146, 148, 152, 160, 166, 171, 169, 170,
-                       169, 164, 160, 158, 155, 150, 149, 145, 143, 135, 129, 110, 105, 101, 97, 93, 90, 88, 75]
+    heart_rate_data = [65, 66, 70, 80, 88, 90, 93, 100, 102, 109, 115, 130, 140, 139, 145, 146, 148, 152, 160, 166, 171, 169, 170, 169, 164, 160, 158, 155, 150, 149, 145, 143, 135, 129, 110, 105, 101, 97, 93, 90, 88, 75]
 
-    start_time = input("Mulai Latihan - Masukkan waktu mulai (hh:mm:ss): ")
-    end_time = input("Latihan Selesai - Masukkan waktu selesai (hh:mm:ss): ")
+    print("\n=== Input Exercise Recording ===")
+    start_time = input("Start Exercise - Enter start time (HH:MM:SS)\t: ")
+    end_time = input("Exercise Completed - Enter end time (HH:MM:SS)\t: ")
 
-    weight = float(input("Masukkan berat badan (kg): "))
-    age = int(input("Masukkan usia (tahun): "))
-    gender = input("Masukkan jenis kelamin (women/men): ")
+    weight = float(input("Enter your weight (kg)\t\t: "))
+    age = int(input("Enter your age (years)\t\t: "))
+    gender = input("Enter your gender (women/men)\t: ")
 
     duration = calculate_duration(start_time, end_time)
-
     average_heart_rate = calculate_average_heart_rate(heart_rate_data)
-
     calories_burned = calculate_calories_burned(duration, average_heart_rate, weight, age, gender)
 
-    print("\n=== Hasil Rekaman Latihan ===")
-    print(f"Durasi Latihan: {duration} menit")
-    print(f"Kalori Terbakar: {calories_burned} kalori")
-    print(f"Rata-rata Heart Rate: {average_heart_rate} BPM")
-
-main()
+    print("\n=== Exercise Recording Result ===")
+    print(f"Exercise Duration\t: {duration} minutes")
+    print(f"Calories Burned\t\t: {calories_burned} calories")
+    print(f"Average Heart Rate\t: {average_heart_rate} BPM")

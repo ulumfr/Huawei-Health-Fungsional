@@ -10,11 +10,6 @@ class CalorieTracker:
         return CalorieTracker(new_burned_calories, new_consumed_calories)
 
     def display_totals(self):
-        print("Total Burned Calories:", self.total_burned_calories)
-        print("Total Consumed Calories:", self.total_consumed_calories)
-
-tracker = CalorieTracker()
-
-tracker = tracker.add_record(burned_calories=300, consumed_calories=500)
-
-tracker.display_totals()
+        print("\n=== Calorie Record ===")
+        print("Total Burned Calories\t:", self.total_burned_calories)
+        print("Total Consumed Calories\t:", self.total_consumed_calories)

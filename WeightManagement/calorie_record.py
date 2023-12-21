@@ -3,7 +3,12 @@ class CalorieTracker:
         self.total_burned_calories = total_burned_calories
         self.total_consumed_calories = total_consumed_calories
 
-    def add_record(self, burned_calories, consumed_calories):
+    def add_record(self, burned_calories=None, consumed_calories=None):
+        if burned_calories is None:
+            burned_calories = 0
+        if consumed_calories is None:
+            consumed_calories = 0
+
         new_burned_calories = self.total_burned_calories + burned_calories
         new_consumed_calories = self.total_consumed_calories + consumed_calories
 

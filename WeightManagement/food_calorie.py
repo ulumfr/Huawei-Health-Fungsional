@@ -10,23 +10,14 @@ def add_calorie_log(diet_log, meal_type, calories):
 
     return f"Calorie log for {meal_type.capitalize()} added: {calories} calories.\n"
 
+def calculate_total_calories(food_log):
+    total_calories = 0
+
+    for meal_type, calories_list in food_log.items():
+        total_calories += sum(calories_list)
+
+    return total_calories
+
 def display_diet_log(diet_log):
     return diet_log
 
-def main():
-    food_log = initialize_diet_log()
-    print("\n=== Input Food Calorie ===")
-    
-    while True:
-        meal_type = input("Enter the meal type (breakfast, lunch, dinner, extra_meal), or type 'done' to exit: ")
-
-        if meal_type.lower() == 'done':
-            break
-
-        calories = float(input("Enter the number of calories: "))
-        result = add_calorie_log(food_log, meal_type, calories)
-        print(result)
-
-    diet_log = display_diet_log(food_log)
-    print("\nCurrent Diet Log: ")
-    print(diet_log)

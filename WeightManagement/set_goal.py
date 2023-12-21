@@ -36,17 +36,21 @@ def calculate_macronutrients(weight_kg, activity_level, tdee):
     return protein_needs, fat_needs, carb_needs_low, carb_needs_high
 
 def format_output(goal, initial_weight, target_weight, weight_loss_needed, completed_by, bmr, tdee, weeks_to_goal_1_5kg, weeks_to_goal_1kg, weeks_to_goal_0_5kg, protein_needs, fat_needs, carb_needs_low, carb_needs_high):
+    calorie_deficit = weight_loss_needed * 7700 if goal.lower() == 'lose' else 0
+    calorie_surplus = -weight_loss_needed * 7700 if goal.lower() == 'gain' else 0
+
     return {
         'goal\t\t\t': goal,
         'initial_weight\t\t': initial_weight,
         'target_weight\t\t': target_weight,
-        'calorie_deficit\t\t': weight_loss_needed * 7700, 
+        'calorie_deficit\t\t': calorie_deficit,
+        'calorie_surplus\t\t': calorie_surplus,
         'completed_by\t\t': completed_by.strftime("%Y-%m-%d"),
         'bmr\t\t\t': bmr,
         'tdee\t\t\t': tdee,
-        'weeks_to_goal_1.5kg\t': weeks_to_goal_1_5kg,
-        'weeks_to_goal_1kg\t': weeks_to_goal_1kg,
-        'weeks_to_goal_0.5kg\t': weeks_to_goal_0_5kg,
+        'weeks_to_goal_1.5kg\t': abs(weeks_to_goal_1_5kg),
+        'weeks_to_goal_1kg\t': abs(weeks_to_goal_1kg),
+        'weeks_to_goal_0.5kg\t': abs(weeks_to_goal_0_5kg),
         'protein_needs\t\t': protein_needs,
         'fat_needs\t\t': fat_needs,
         'carb_needs_low\t\t': carb_needs_low,

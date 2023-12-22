@@ -32,7 +32,6 @@ def calculate_macronutrients(weight_kg, activity_level, tdee):
     carb_calories_high = int(0.65 * tdee)
     carb_needs_low = carb_calories_low // 4
     carb_needs_high = carb_calories_high // 4
-
     return protein_needs, fat_needs, carb_needs_low, carb_needs_high
 
 def format_output(goal, initial_weight, target_weight, weight_loss_needed, completed_by, bmr, tdee, weeks_to_goal_1_5kg, weeks_to_goal_1kg, weeks_to_goal_0_5kg, protein_needs, fat_needs, carb_needs_low, carb_needs_high):
@@ -66,7 +65,5 @@ def calculate_calorie_deficit_advanced(initial_weight, goal, target_weight, comp
     weeks_0_5kg = calculate_weeks_to_goal(initial_weight, target_weight, 0.5)
 
     protein_needs, fat_needs, carb_needs_low, carb_needs_high = calculate_macronutrients(initial_weight, activity_level, tdee)
-
     completed_by_date = datetime.strptime(completed_by, "%Y-%m-%d")
-
     return format_output(goal, initial_weight, target_weight, initial_weight - target_weight, completed_by_date, bmr, tdee, weeks_1_5kg, weeks_1kg, weeks_0_5kg, protein_needs, fat_needs, carb_needs_low, carb_needs_high)

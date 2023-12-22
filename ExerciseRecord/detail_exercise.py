@@ -28,4 +28,3 @@ def parse_time(time_string):
 
 def calculate_minutes_between_datetimes(start_datetime, end_datetime):
     return ((end_datetime - start_datetime).total_seconds()) / 60
-

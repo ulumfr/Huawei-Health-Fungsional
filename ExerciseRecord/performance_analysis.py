@@ -3,11 +3,11 @@ def heart_rate_zones(age, heart_rate_data):
     zones = calculate_heart_rate_zones(max_heart_rate)
     
     print_heart_rate_zones(zones)
-
-    print("\n=== Heart Rate Data Analysis ===")
+    
     for heart_rate in heart_rate_data:
         zone = get_heart_rate_zone(heart_rate, zones)
         print(f"Heart Rate: {heart_rate} bpm - Zone: {zone}")
+    return heart_rate_data
 
 def calculate_max_heart_rate(age):
     return 220 - age
@@ -22,9 +22,9 @@ def calculate_heart_rate_zones(max_heart_rate):
     }
 
 def print_heart_rate_zones(zones):
-    print("\n=== Heart Rate Training Zones ===")
     for zone, (lower, upper) in zones.items():
         print(f"{zone}: {lower:.2f} - {upper:.2f} bpm")
+    return zones
 
 def get_heart_rate_zone(heart_rate, zones):
     for zone, (lower, upper) in zones.items():

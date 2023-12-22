@@ -11,7 +11,6 @@ class CalorieTracker:
 
         new_burned_calories = self.total_burned_calories + burned_calories
         new_consumed_calories = self.total_consumed_calories + consumed_calories
-
         return CalorieTracker(new_burned_calories, new_consumed_calories)
 
     def display_totals(self):

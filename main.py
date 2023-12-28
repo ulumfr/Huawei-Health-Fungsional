@@ -12,9 +12,9 @@ weight_data = []
 
 dummy_account = {
     "users": {
-        "u": {
+        "ulum@gmail.com": {
             "name": "Bahrul Ulum Fadhlur R",
-            "password": "u",
+            "password": "userUlum",
         },
         "gus@gmail.com": {
             "name": "Muhammad Gus Nadir",

@@ -39,3 +39,4 @@ def create_and_plot_heart_rate_chart(start_time, interval, heart_rate_values):
     timestamps = generate_timestamps(start_time, interval, len(heart_rate_values))
     heart_rate_data = create_heart_rate_data(timestamps, heart_rate_values)
     plot_heart_rate_chart(*extract_heart_rate_info(heart_rate_data))
+    return heart_rate_data

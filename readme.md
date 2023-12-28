@@ -7,8 +7,10 @@ The Huawei Health application is a platform developed using the functional parad
 3. Sleep Pattern Recording
 4. Weight Management
 
-## Flowchart
+## Flowchart and Application Concept
 ![Flowchart](HuaweiFlowchart.png)
+[Huawei Health - Word](HuaweiHealth.docx)
+
 
 ## Members
 - 202110370311462 - [Bahrul Ulum Fadhlur Rohman](https://github.com/ulumfr)
